@@ -1,58 +1,42 @@
-import { useEffect, useRef, Suspense, lazy } from 'react'
-import gsap from 'gsap'
+import { Suspense, lazy } from 'react'
 
 const HeroScene = lazy(() => import('./HeroScene.jsx'))
 
 export default function Hero() {
-  const heroTextRef = useRef(null)
-
-  /* Subtle 3D tilt on the floating overlay text */
-  useEffect(() => {
-    const heroText = heroTextRef.current
-    if (!heroText) return
-
-    const handleMove = (e) => {
-      if (window.innerWidth <= 1024) return
-      const xAxis = (window.innerWidth / 2 - e.pageX) / 40
-      const yAxis = (window.innerHeight / 2 - e.pageY) / 40
-      gsap.to(heroText, {
-        rotationY: xAxis,
-        rotationX: yAxis,
-        duration: 1.5,
-        ease: 'power3.out',
-        transformPerspective: 1200,
-      })
-    }
-    document.addEventListener('mousemove', handleMove)
-    return () => document.removeEventListener('mousemove', handleMove)
-  }, [])
-
   return (
-    <section id="home" className="relative min-h-[100svh] overflow-hidden bg-[#0a0a0a] flex flex-col items-center justify-center px-6">
+    <section id="home" className="relative min-h-[100svh] overflow-hidden bg-[#030305] flex flex-col">
       <Suspense fallback={null}>
         <HeroScene />
       </Suspense>
 
-      {/* Background Title */}
-      <h1 className="absolute z-10 text-[15vw] font-bold text-white/5 select-none leading-none tracking-tighter pointer-events-none">
-        DEVELOPER
-      </h1>
+      <div className="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-4 -mt-20">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-2 leading-tight">
+          Design, Build, Ship <br />
+          <span className="bg-gradient-to-r from-[#ff61d8] via-[#8652ff] to-[#43b4ff] text-transparent bg-clip-text">
+            Modern Interfaces.
+          </span>
+        </h1>
+        <p className="text-gray-400 max-w-lg mt-4 text-sm md:text-base">
+          Frontend Developer specializing in React.js, modern JavaScript, and responsive
+          design — turning wireframes into pixel-perfect experiences.
+        </p>
 
-      {/* Content */}
-      <div ref={heroTextRef} className="hero-text-wrapper relative z-20 text-center mt-20">
-        <h2 className="text-6xl md:text-8xl font-handwriting text-purple-500 mb-4 rotate-[-3deg]">
-          Frontend Armor
-        </h2>
-        <p className="text-lg md:text-xl text-gray-300">Created for you.</p>
+        <div className="flex gap-4 mt-10 pointer-events-auto">
+          <a href="#projects" data-cursor className="btn-custom btn-primary cursor-pointer">
+            View Work
+          </a>
+          <a href="#contact" data-cursor className="btn-custom cursor-pointer">
+            Contact Me
+          </a>
+        </div>
       </div>
 
-      {/* Info Card */}
-      <div className="absolute z-10 bottom-12 left-6 md:left-12 glass-card p-6 rounded-3xl max-w-sm">
-        <h3 className="font-bold text-lg mb-2">CURRENTLY AVAILABLE</h3>
-        <p className="text-gray-400 text-sm mb-4">Open to new frontend projects and freelance work this month.</p>
-        <a href="#contact" className="text-sm font-semibold flex items-center gap-2 hover:text-purple-400 transition" data-cursor>
-          Get in touch <span>→</span>
-        </a>
+      <div className="relative z-10 pb-8 flex flex-col items-center justify-center text-gray-500 text-sm pointer-events-none">
+        <span className="mb-2">Discover My Work</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce text-[#8652ff]">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
       </div>
     </section>
   )
