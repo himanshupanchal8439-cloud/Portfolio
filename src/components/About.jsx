@@ -48,7 +48,7 @@ export default function About() {
             </RevealP>
           </div>
 
-          <div className="mt-16 flex items-end justify-between gap-8 border-t border-brand-primary/10 pt-8">
+          <div className="mt-16 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 border-t border-brand-primary/10 pt-8">
             <div>
               <div className="eyebrow text-brand-primary/60">Himanshu Panchal · Frontend Developer</div>
               <div className="eyebrow text-brand-primary/40 mt-1">himanshupanchal8439@gmail.com · +91-8439470318</div>

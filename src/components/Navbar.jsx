@@ -59,10 +59,17 @@ export default function Navbar() {
           ☰
         </button>
       </nav>
-      <div className={`lg:hidden ${open ? 'flex' : 'hidden'} flex-col gap-4 px-6 pb-6 glass-light eyebrow text-brand-ink/80`}>
+      <div className={`lg:hidden ${open ? 'flex' : 'hidden'} flex-col gap-1 px-6 pb-6 glass-light eyebrow text-brand-ink/80`}>
         {LINKS.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
+          <a key={l.href} href={l.href} className="py-2.5" onClick={() => setOpen(false)}>{l.label}</a>
         ))}
+        <a
+          href="#contact"
+          className="mt-3 inline-flex justify-center bg-brand-primary text-brand-cream px-6 py-3 rounded-full"
+          onClick={() => setOpen(false)}
+        >
+          Hire Me
+        </a>
       </div>
     </header>
   )

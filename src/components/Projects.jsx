@@ -21,8 +21,8 @@ const PROJECTS = [
 
 function ProjectCard({ tag, stack, img, alt, title, titleItalic, desc }) {
   return (
-    <article className="product-card p-8 md:p-10 flex flex-col justify-between">
-      <div className="flex items-start justify-between mb-6">
+    <article className="product-card p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 mb-6">
         <div className="eyebrow text-brand-accent">{tag}</div>
         <div className="eyebrow opacity-40">{stack}</div>
       </div>

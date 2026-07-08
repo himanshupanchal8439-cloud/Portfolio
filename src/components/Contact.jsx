@@ -12,7 +12,7 @@ export default function Contact() {
         href="mailto:himanshupanchal8439@gmail.com"
         ref={emailRef}
         data-cursor
-        className="magnetic inline-flex bg-brand-primary text-brand-cream eyebrow px-8 py-5 rounded-full text-base normal-case tracking-normal"
+        className="magnetic inline-flex max-w-full bg-brand-primary text-brand-cream eyebrow px-5 sm:px-8 py-4 sm:py-5 rounded-full text-sm sm:text-base normal-case tracking-normal break-all sm:break-normal"
       >
         himanshupanchal8439@gmail.com
       </a>
