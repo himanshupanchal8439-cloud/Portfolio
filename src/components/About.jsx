@@ -1,16 +1,7 @@
-import useRevealLine from '../hooks/useRevealLine.js'
+import { Suspense, lazy } from 'react'
 import useRevealUp from '../hooks/useRevealUp.js'
 
-function RevealLine({ children, className = '' }) {
-  const ref = useRevealLine()
-  return (
-    <span className="block overflow-hidden">
-      <span className="split-word">
-        <span ref={ref} className={`split-inner ${className}`}>{children}</span>
-      </span>
-    </span>
-  )
-}
+const AboutScene = lazy(() => import('./AboutScene.jsx'))
 
 function RevealP({ children }) {
   const ref = useRevealUp()
@@ -19,23 +10,26 @@ function RevealP({ children }) {
 
 export default function About() {
   return (
-    <section id="about" className="section-pad relative">
-      <div className="grid grid-cols-12 gap-8 items-start">
-        <div className="col-span-12 lg:col-span-3 lg:sticky lg:top-32 self-start">
-          <div className="eyebrow text-brand-secondary mb-6"><span className="opacity-50">01 —</span> About</div>
-          <div className="h-italic text-brand-primary text-xl leading-snug">
+    <section id="about" className="relative overflow-hidden bg-[#0a0a0a] text-gray-200 section-pad">
+      <Suspense fallback={null}>
+        <AboutScene />
+      </Suspense>
+
+      <div className="relative z-10 grid md:grid-cols-12 gap-12 items-start">
+        {/* Left Column */}
+        <div className="md:col-span-4">
+          <span className="text-indigo-400 font-mono text-sm tracking-widest uppercase block mb-4">01 — About</span>
+          <h2 className="text-4xl md:text-5xl font-light leading-tight text-white italic">
             A Bengaluru front-end developer turning wireframes into interfaces people actually enjoy.
+          </h2>
+          <div className="mt-8 w-12 h-12 rounded-full border border-indigo-500/30 flex items-center justify-center">
+            <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-8 lg:col-start-5">
-          <h2 className="h-display fs-h2 text-brand-primary mb-12">
-            <RevealLine>Built at the</RevealLine>
-            <RevealLine className="h-italic text-brand-secondary">keyboard</RevealLine>
-            <RevealLine>— not the boardroom.</RevealLine>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 fs-lead text-brand-ink/75">
+        {/* Right Column */}
+        <div className="md:col-span-8 space-y-12">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-400 leading-relaxed">
             <RevealP>
               I'm a detail-oriented Front-End Developer with 1+ years of experience specializing in modern
               JavaScript, React.js, and responsive web design. I focus on UI/UX collaboration, browser
@@ -48,12 +42,21 @@ export default function About() {
             </RevealP>
           </div>
 
-          <div className="mt-16 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 border-t border-brand-primary/10 pt-8">
+          <div className="border-t border-gray-800 pt-8 mt-12 flex flex-col md:flex-row justify-between gap-6 text-sm font-mono text-indigo-300">
             <div>
-              <div className="eyebrow text-brand-primary/60">Himanshu Panchal · Frontend Developer</div>
-              <div className="eyebrow text-brand-primary/40 mt-1">himanshupanchal8439@gmail.com · +91-8439470318</div>
+              <p>HIMANSHU PANCHAL · FRONTEND DEVELOPER</p>
+              <a href="mailto:himanshupanchal8439@gmail.com" className="hover:underline" data-cursor>
+                HIMANSHUPANCHAL8439@GMAIL.COM
+              </a>{' '}
+              · +91-8439470318
             </div>
-            <a href="https://linkedin.com/in/himanshupanchal" target="_blank" rel="noreferrer" className="link-line eyebrow text-brand-primary" data-cursor>
+            <a
+              href="https://linkedin.com/in/himanshupanchal"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition uppercase tracking-tighter"
+              data-cursor
+            >
               Connect on LinkedIn →
             </a>
           </div>
