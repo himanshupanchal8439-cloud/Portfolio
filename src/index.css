@@ -88,10 +88,11 @@ body, a, button { cursor: none; }
 .link-line:hover::after { transform: scaleX(0); transform-origin: left; }
 
 .glass-light {
-  background: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.88);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(83,53,201,0.08);
+  border-bottom: 1px solid rgba(83,53,201,0.08);
+  box-shadow: 0 4px 24px rgba(16,14,28,0.08);
 }
 .glass-dark {
   background: rgba(247,245,239,0.06);
