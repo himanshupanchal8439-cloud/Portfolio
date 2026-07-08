@@ -21,9 +21,9 @@
 }
 * { -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
-.navbar-safe-top { top: calc(env(safe-area-inset-top, 0px) + 1rem); }
+.navbar-safe-top { top: max(1.5rem, calc(env(safe-area-inset-top, 0px) + 1.25rem)); }
 @media (min-width: 640px) {
-  .navbar-safe-top { top: calc(env(safe-area-inset-top, 0px) + 1.5rem); }
+  .navbar-safe-top { top: max(1.75rem, calc(env(safe-area-inset-top, 0px) + 1.5rem)); }
 }
 html, body, #root { background: #f7f5ef; color: #201d2e; }
 body {
