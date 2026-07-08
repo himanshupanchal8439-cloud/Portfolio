@@ -115,11 +115,19 @@ body, a, button { cursor: none; }
 section { position: relative; }
 .section-pad { padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 6vw, 5rem); }
 
-.orbit-node {
-  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.9), rgba(255,255,255,0.55));
-  border: 1px solid rgba(83,53,201,0.14);
-  box-shadow: 0 30px 60px -30px rgba(83,53,201,0.35);
+.skill-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.skill-card:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-5px);
 }
 
 .product-card {
