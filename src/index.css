@@ -118,15 +118,15 @@ section { position: relative; }
 .skill-card {
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(99, 102, 241, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.5);
   transition: all 0.3s ease;
 }
 .skill-card:hover {
-  background: rgba(99, 102, 241, 0.1);
-  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-5px);
 }
 
