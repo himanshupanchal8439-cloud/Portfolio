@@ -99,6 +99,13 @@ body, a, button { cursor: none; }
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid rgba(247,245,239,0.12);
 }
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.font-handwriting { font-family: 'Playwrite AU QLD', cursive; }
 
 .split-word { display: inline-block; overflow: hidden; }
 .split-inner { display: inline-block; transform: translateY(115%); will-change: transform; }
