@@ -48,9 +48,9 @@ export default function Hero() {
 
       {/* Info Card */}
       <div className="relative z-10 mt-10 md:mt-0 md:absolute md:bottom-12 md:left-12 glass-card p-5 sm:p-6 rounded-3xl w-full max-w-xs sm:max-w-sm mx-auto md:mx-0">
-        <h3 className="font-bold text-base sm:text-lg mb-2">CURRENTLY AVAILABLE</h3>
-        <p className="text-gray-400 text-sm mb-4">Open to new frontend projects and freelance work this month.</p>
-        <a href="#contact" className="text-sm font-semibold flex items-center gap-2 hover:text-purple-400 transition" data-cursor>
+        <h3 className="font-bold text-base sm:text-lg mb-2 text-white">CURRENTLY AVAILABLE</h3>
+        <p className="text-gray-300 text-sm mb-4">Open to new frontend projects and freelance work this month.</p>
+        <a href="#contact" className="text-sm font-semibold flex items-center gap-2 text-white hover:text-purple-400 transition" data-cursor>
           Get in touch <span>→</span>
         </a>
       </div>
