@@ -35,7 +35,7 @@ export default function Navbar() {
   const isLight = theme === 'light'
 
   return (
-    <header className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl">
+    <header className="navbar-safe-top fixed left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl">
       <nav
         className={`${isLight ? 'glass-nav-light' : 'glass-nav'} rounded-2xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between`}
       >
