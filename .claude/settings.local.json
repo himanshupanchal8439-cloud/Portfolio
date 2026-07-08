@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell([Environment]::SetEnvironmentVariable\\(\"Path\", $env:Path + \";C:\\\\Program Files\\\\Git\\\\cmd\", \"User\"\\); $env:Path += \";C:\\\\Program Files\\\\Git\\\\cmd\"; git -v)",
+      "Bash(git config *)"
+    ]
+  }
+}
