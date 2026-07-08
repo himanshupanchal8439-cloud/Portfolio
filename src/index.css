@@ -87,18 +87,21 @@ body, a, button { cursor: none; }
 }
 .link-line:hover::after { transform: scaleX(0); transform-origin: left; }
 
-.glass-light {
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border-bottom: 1px solid rgba(83,53,201,0.08);
-  box-shadow: 0 4px 24px rgba(16,14,28,0.08);
+.glass-nav {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.glass-dark {
-  background: rgba(247,245,239,0.06);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(247,245,239,0.12);
+.nav-link {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+.nav-link:hover {
+  transform: translateZ(20px) scale(1.1);
+  color: #818cf8;
 }
 .glass-card {
   background: rgba(255, 255, 255, 0.08);
