@@ -99,35 +99,13 @@ body, a, button { cursor: none; }
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid rgba(247,245,239,0.12);
 }
-.btn-custom {
-  position: relative;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  font-size: 1rem;
-  color: white;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
-.btn-custom:hover {
-  border-color: white;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-.btn-primary {
-  border: 1px solid transparent;
-  background: linear-gradient(#000, #000) padding-box,
-              linear-gradient(90deg, #ff61d8, #3b82f6) border-box;
-}
-.btn-primary:hover {
-  box-shadow: 0 0 20px rgba(255, 97, 216, 0.3);
-}
+.font-handwriting { font-family: 'Playwrite AU QLD', cursive; }
 
 .split-word { display: inline-block; overflow: hidden; }
 .split-inner { display: inline-block; transform: translateY(115%); will-change: transform; }
@@ -160,6 +138,28 @@ section { position: relative; }
 
 a:focus-visible, button:focus-visible { outline: 2px solid #f5c542; outline-offset: 4px; border-radius: 4px; }
 
+.cinema-grad {
+  background: radial-gradient(ellipse at 20% 30%, rgba(14,165,184,0.14), transparent 55%),
+              radial-gradient(ellipse at 80% 80%, rgba(83,53,201,0.16), transparent 55%);
+}
+
+.perspective-container { perspective: 1200px; transform-style: preserve-3d; }
+.hero-text-wrapper { transform-style: preserve-3d; }
+.preserve-3d { transform-style: preserve-3d; }
+#canvas-container { filter: drop-shadow(0 30px 40px rgba(83, 53, 201, 0.2)); }
+
+@keyframes float-3d {
+  0%, 100% { transform: translateY(0) translateZ(80px); }
+  50% { transform: translateY(-15px) translateZ(100px); }
+}
+@keyframes float-3d-alt {
+  0%, 100% { transform: translateY(0) translateZ(100px); }
+  50% { transform: translateY(15px) translateZ(120px); }
+}
+.floating-badge { animation: float-3d 5s ease-in-out infinite; }
+.floating-badge-alt { animation: float-3d-alt 6s ease-in-out infinite; animation-delay: -2s; }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: 0.001ms !important; }
+  .hero-text-wrapper { transform: none !important; }
 }
